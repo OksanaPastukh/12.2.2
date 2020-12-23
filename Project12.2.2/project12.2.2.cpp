@@ -33,7 +33,7 @@ void Print(Elem* current)
 {
 	if (current == NULL)
 	{
-		exit(0);
+		return;
 	}
 	cout << current->info << " ";
 	if (current->link != NULL)
@@ -41,9 +41,32 @@ void Print(Elem* current)
 		Print(current->link);
 	}
 	else
+	{
 		cout << endl;
+	}
 }
-
+bool check_info(Elem* previous)
+{
+	if (previous == NULL)
+	{
+		return false;
+	}
+	Elem* current = previous->link;
+	if (previous->info == current->info)
+		{
+			return true;
+		}
+	previous = current;
+	current = current->link;
+	if (current->link != NULL)
+	{
+		check_info(previous->link);
+	}
+	else
+	{
+		return false;
+	}
+}
 int main()
 {
 	SetConsoleCP(1251);
@@ -56,6 +79,14 @@ int main()
 	int min_value = 0;
 	int max_value = 10;
 	enqueue(first, last, size, min_value, max_value, 0);// create
-	Print(NULL);
+	Print(first);
+	if (check_info(first) == true)
+	{
+		cout << "В списку є пара" << endl;
+	}
+	else
+	{
+		cout << "В списку немає пари" << endl;
+	}
 	return 0;
 }
