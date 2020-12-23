@@ -29,17 +29,21 @@ void enqueue(Elem*& first, Elem*& last, int size, int min_value, int max_value, 
 		enqueue(first, last, size, min_value, max_value, i + 1);
 	}
 }
-void Print(Elem* first)
+void Print(Elem* current)
 {
-	Elem* current = first;
+	if (current == NULL)
+	{
+		exit(0);
+	}
 	cout << current->info << " ";
-	if (first != NULL)
+	if (current->link != NULL)
 	{
 		Print(current->link);
 	}
 	else
 		cout << endl;
 }
+
 int main()
 {
 	SetConsoleCP(1251);
@@ -52,6 +56,6 @@ int main()
 	int min_value = 0;
 	int max_value = 10;
 	enqueue(first, last, size, min_value, max_value, 0);// create
-	Print(first);
+	Print(NULL);
 	return 0;
 }
