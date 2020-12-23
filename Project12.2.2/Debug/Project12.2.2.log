@@ -1,0 +1,4 @@
+﻿  project12.2.2.cpp
+C:\Users\ksush\source\repos\Project12.2.2\Project12.2.2\project12.2.2.cpp(74,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\ksush\source\repos\Project12.2.2\Project12.2.2\project12.2.2.cpp(69): warning C4715: check_info: значение возвращается не при всех путях выполнения
+  Project12.2.2.vcxproj -> C:\Users\ksush\source\repos\Project12.2.2\Debug\Project12.2.2.exe
